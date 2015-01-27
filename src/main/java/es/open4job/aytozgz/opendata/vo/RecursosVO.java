@@ -1,6 +1,6 @@
 package es.open4job.aytozgz.opendata.vo;
 
-public class EquipamientosVO {
+public class RecursosVO {
 
 	private double _latitud;
 	private double _longitud;
@@ -20,10 +20,10 @@ public class EquipamientosVO {
 	private String _poblacion;
 	private String _telefono;
 
-	public EquipamientosVO() {
+	public RecursosVO() {
 	}
 
-	public EquipamientosVO(double _latitud, double _longitud,
+	public RecursosVO(double _latitud, double _longitud,
 			String _servicios, String _horario, String _titulo,
 			String _descripcion, String _gradoacc, int _id, String _tipo,
 			String _relacionado, String _clasificación, String _precio,
