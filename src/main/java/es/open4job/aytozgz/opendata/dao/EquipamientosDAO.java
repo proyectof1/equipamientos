@@ -19,7 +19,7 @@ public class EquipamientosDAO {
 	public EquipamientosVO getDatosEquipamiento(int idEquipo) {
 		EquipamientosVO equipamiento = null;
 	
-		// TODO
+		// TODO 
 		return equipamiento;  
 				
 	}
