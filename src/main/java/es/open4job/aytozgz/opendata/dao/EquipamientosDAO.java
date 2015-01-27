@@ -20,7 +20,8 @@ public class EquipamientosDAO {
 		EquipamientosVO equipamiento = null;
 	
 		// TODO
-		return equipamiento;
+		return equipamiento; 
+				
 	}
 
 }
