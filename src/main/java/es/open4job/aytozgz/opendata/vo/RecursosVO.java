@@ -9,7 +9,6 @@ public class RecursosVO {
 	private String _titulo;
 	private String _descripcion;
 	private String _gradoacc;
-	private int _id;
 	private String _tipo;
 	private String _relacionado;
 	private String _clasificación;
@@ -19,6 +18,7 @@ public class RecursosVO {
 	private String _accesibilidad;
 	private String _poblacion;
 	private String _telefono;
+	private int _id;
 
 	public RecursosVO() {
 	}
