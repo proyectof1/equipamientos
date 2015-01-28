@@ -2,113 +2,78 @@ package es.open4job.aytozgz.opendata.vo;
 
 public class AparcamientosAccesosVO {
 
-	private double _latitud;
-	private double _longitud;
-	private String _titulo;
-	private String _icono;
-	private String _tipo;
-	private int _id;
+	private double latitud;
+	private double longitud;
+	private String titulo;
+	private String icono;
+	private String tipo;
+	private int id;
 
 	public AparcamientosAccesosVO() {
 	}
 
-	public AparcamientosAccesosVO(double _latitud, double _longitud,
-			String _titulo, String _icono, String _tipo, int _id) {
-		this._latitud = _latitud;
-		this._longitud = _longitud;
-		this._titulo = _titulo;
-		this._icono = _icono;
-		this._tipo = _tipo;
-		this._id = _id;
+	public AparcamientosAccesosVO(int _id, double _latitud, double _longitud,
+			String _titulo, String _icono, String _tipo) {
+		this.id = _id;
+		this.latitud = _latitud;
+		this.longitud = _longitud;
+		this.titulo = _titulo;
+		this.icono = _icono;
+		this.tipo = _tipo;
 	}
 
-	/**
-	 * @return the _latitud
-	 */
-	public double get_latitud() {
-		return _latitud;
+	public double getLatitud() {
+		return latitud;
 	}
 
-	/**
-	 * @param _latitud
-	 *            the _latitud to set
-	 */
-	public void set_latitud(double _latitud) {
-		this._latitud = _latitud;
+	public void setLatitud(double latitud) {
+		this.latitud = latitud;
 	}
 
-	/**
-	 * @return the _longitud
-	 */
-	public double get_longitud() {
-		return _longitud;
+	public double getLongitud() {
+		return longitud;
 	}
 
-	/**
-	 * @param _longitud
-	 *            the _longitud to set
-	 */
-	public void set_longitud(double _longitud) {
-		this._longitud = _longitud;
+	public void setLongitud(double longitud) {
+		this.longitud = longitud;
 	}
 
-	/**
-	 * @return the _titulo
-	 */
-	public String get_titulo() {
-		return _titulo;
+	public String getTitulo() {
+		return titulo;
 	}
 
-	/**
-	 * @param _titulo
-	 *            the _titulo to set
-	 */
-	public void set_titulo(String _titulo) {
-		this._titulo = _titulo;
+	public void setTitulo(String titulo) {
+		this.titulo = titulo;
 	}
 
-	/**
-	 * @return the _icono
-	 */
-	public String get_icono() {
-		return _icono;
+	public String getIcono() {
+		return icono;
 	}
 
-	/**
-	 * @param _icono
-	 *            the _icono to set
-	 */
-	public void set_icono(String _icono) {
-		this._icono = _icono;
+	public void setIcono(String icono) {
+		this.icono = icono;
 	}
 
-	/**
-	 * @return the _tipo
-	 */
-	public String get_tipo() {
-		return _tipo;
+	public String getTipo() {
+		return tipo;
 	}
 
-	/**
-	 * @param _tipo
-	 *            the _tipo to set
-	 */
-	public void set_tipo(String _tipo) {
-		this._tipo = _tipo;
+	public void setTipo(String tipo) {
+		this.tipo = tipo;
 	}
 
-	/**
-	 * @return the _id
-	 */
-	public int get_id() {
-		return _id;
+	public int getId() {
+		return id;
 	}
 
-	/**
-	 * @param _id
-	 *            the _id to set
-	 */
-	public void set_id(int _id) {
-		this._id = _id;
+	public void setId(int id) {
+		this.id = id;
 	}
+
+	public String toString() {
+		return ("AparcamientosAccesosVO = [" + "id = " + id + ", latitud = "
+				+ latitud + ", longitud = " + longitud + ", titulo = " + titulo
+				+ ", icono = " + icono + ", tipo = " + tipo + "]");
+	}
+
 }

@@ -2,10 +2,12 @@ package es.open4job.aytozgz.opendata.dao;
 
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.sql.Statement;
+import java.util.ArrayList;
 import java.util.List;
+import java.util.logging.Level;
 
 import es.open4job.aytozgz.opendata.vo.AparcamientosAccesosVO;
-import es.open4job.aytozgz.opendata.vo.RecursosVO;
 
 public class AparcamientosDAO extends GenericDAO {
 
@@ -18,24 +20,57 @@ public class AparcamientosDAO extends GenericDAO {
 	// Listado de aparcamientos
 	public List<AparcamientosAccesosVO> getListadoAparcamientos() {
 
-		List<AparcamientosAccesosVO> aparcamientos = null;
+		List<AparcamientosAccesosVO> aparcamientos = new ArrayList<AparcamientosAccesosVO>();
 
-		List<RecursosVO> recursos = null;
+		String query = "SELECT * FROM APARCAMIENTO_ACCESOS";
 
+		Statement st = null;
 		ResultSet rs = null;
+
 		try {
-			rs = connection.createStatement().executeQuery(
-					"SELECT * FROM APARCAMIENTOACCESO");
+			this.abrirConexion(report2);
+			st = connection.createStatement();
+			rs = st.executeQuery(query);
+			// rs = connection.createStatement().executeQuery(query);
 
 			while (rs.next()) {
-				System.out.println(rs.next()); // revisar
+				int id = rs.getInt(1);
+				float latitud = rs.getFloat(2);
+				float longitud = rs.getFloat(3);
+				String titulo = rs.getString(4);
+				String icono = rs.getString(5);
+				String tipo = rs.getString(6);
+
+				AparcamientosAccesosVO aparcamiento = new AparcamientosAccesosVO(
+						id, latitud, longitud, titulo, icono, tipo);
+				aparcamientos.add(aparcamiento);
 			}
 
+		} catch (ClassNotFoundException e) {
+			e.printStackTrace();
+			logger.log(Level.SEVERE,
+					"ClassNotFoundException : " + e.getMessage());
 		} catch (SQLException e) {
 			e.printStackTrace();
+			logger.log(Level.SEVERE, "SQLException : " + e.getMessage());
+		} finally {
+			if (rs != null) {
+				try {
+					rs.close();
+				} catch (Exception e) {
+				}
+			}
+			if (st != null) {
+				try {
+					st.close();
+				} catch (Exception e) {
+				}
+			}
 		}
+		this.cerrarConexion();
 
 		return aparcamientos;
+
 	}
 
 	// Obtiene los datos de un registro en concreto
