@@ -69,7 +69,7 @@ public class RecursosDAO extends GenericDAO {
 			e.printStackTrace();
 			logger.log(Level.SEVERE,
 					"ClassNotFoundException : " + e.getMessage());
-		} catch (SQLException ereport2) {
+		} catch (SQLException e) {
 			e.printStackTrace();
 			logger.log(Level.SEVERE, "SQLException : " + e.getMessage());
 		} finally {

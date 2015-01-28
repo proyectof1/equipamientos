@@ -28,7 +28,7 @@ public class AparcamientosDAO extends GenericDAO {
 		ResultSet rs = null;
 
 		try {
-			this.abrirConexion(report2);
+			this.abrirConexion();
 			st = connection.createStatement();
 			rs = st.executeQuery(query);
 			// rs = connection.createStatement().executeQuery(query);
