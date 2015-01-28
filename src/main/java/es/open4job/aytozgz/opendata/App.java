@@ -35,10 +35,23 @@ public class App
     		Iterator<RecursosVO> iterator = recursos.iterator();
     		while (iterator.hasNext()) {
     			RecursosVO recurso = iterator.next();
-    			System.out.println(recurso.toString());
+    			System.out.println("recurso " + recurso.get_id()+ " " + recurso.get_titulo() + " " + recurso.get_latitud() + " " + recurso.get_longitud());
     		}
     	}
     	 
+    	
+    	//busqueda de 1 recurso en concreto
+    	System.out.println("\n 2º FUNCION \n ");
+    	RecursosVO recurso = recursosDAO.getDatosRecurso(18370);
+    	
+    	if (recurso != null){
+			System.out.println("recurso " + recurso.get_id()+ " " + recurso.get_titulo() + " " + recurso.get_latitud() + " " + recurso.get_longitud());
+
+    		//iterator como no es una lista no va
+    	}
+    	
+    	
+    	
     	
     }
 }

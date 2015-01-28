@@ -80,19 +80,58 @@ public class RecursosDAO extends GenericDAO {
 		
 
 	// Obtiene los datos de un registro en concreto
+	
 	public RecursosVO getDatosRecurso(int idEquipo) {
 
 		RecursosVO recurso = null;
 
+		String query = "SELECT ID, TITULO, LATITUD, LONGITUD FROM RECURSO WHERE ID = " + idEquipo;
+
+		Statement st = null;
 		ResultSet rs = null;
+		
 		try {
-			rs = connection.createStatement().executeQuery(
-					"SELECT * FROM RECURSO WHERE ID = " + idEquipo);
-			rs.next();
-			System.out.println(rs.getString(1)); // 0 ?
+			
+			this.abrirConexion();
+			
+			st = connection.createStatement();
+			rs = st.executeQuery(query);
+			//rs = connection.createStatement().executeQuery(query);
+
+			while (rs.next()) {
+				int id = rs.getInt(1);
+				String titulo = rs.getString(2);
+				float latitud = rs.getFloat(3);
+				float longitud = rs.getFloat(4);
+				
+				//RecursosVO recurso = new RecursosVO(id, titulo, latitud, longitud);
+				//recursos.add(recurso);
+				recurso = new RecursosVO(id, titulo, latitud, longitud);
+
+			}
+
+		} catch (ClassNotFoundException e) {
+			e.printStackTrace();
+			logger.log(Level.SEVERE,
+					"ClassNotFoundException : " + e.getMessage());
 		} catch (SQLException e) {
 			e.printStackTrace();
+			logger.log(Level.SEVERE, "SQLException : " + e.getMessage());
+		}finally {
+			if (rs != null) {
+				try {
+					rs.close();
+				} catch (Exception e) {
+				}
+			}
+			if (st != null) {
+				try {
+					st.close();
+				} catch (Exception e) {
+				}
+			}
 		}
+		this.cerrarConexion();
 
 		return recurso;
 
