@@ -33,6 +33,7 @@ public class App {
 		 */
 		// llamada a recursosDao
 
+
 		RecursosDAO recursosDAO = new RecursosDAO(driver, url, user, password);
 
 		List<RecursosVO> recursos = recursosDAO.getListadoRecursos();
