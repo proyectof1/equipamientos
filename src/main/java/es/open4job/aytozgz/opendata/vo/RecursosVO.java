@@ -2,312 +2,197 @@ package es.open4job.aytozgz.opendata.vo;
 
 public class RecursosVO {
 
-	private double _latitud;
-	private double _longitud;
-	private String _servicios;
-	private String _horario;
-	private String _titulo;
-	private String _descripcion;
-	private String _gradoacc;
-	private int _id;
-	private String _tipo;
-	private String _relacionado;
-	private String _clasificación;
-	private String _precio;
-	private String _email;
-	private String _url;
-	private String _accesibilidad;
-	private String _poblacion;
-	private String _telefono;
+	private double latitud;
+	private double longitud;
+	private String servicios;
+	private String horario;
+	private String titulo;
+	private String descripcion;
+	private String gradoacc;
+	private int id;
+	private String tipo;
+	private String relacionado;
+	private String clasificación;
+	private String precio;
+	private String email;
+	private String url;
+	private String accesibilidad;
+	private String poblacion;
+	private String telefono;
 
 	public RecursosVO() {
 	}
 
-	public RecursosVO(int _id, String _titulo, double _latitud, double _longitud){
-		this._id = _id;
-		this._titulo = _titulo;
-		this._latitud = _latitud;
-		this._longitud = _longitud;
-	}
-	
-	public RecursosVO(double _latitud, double _longitud,
+	public RecursosVO(int _id, double _latitud, double _longitud,
 			String _servicios, String _horario, String _titulo,
-			String _descripcion, String _gradoacc, int _id, String _tipo,
+			String _descripcion, String _gradoacc, String _tipo,
 			String _relacionado, String _clasificación, String _precio,
-			String _email, String _url, String accesibilidad,
+			String _email, String _url, String _accesibilidad,
 			String _poblacion, String _telefono) {
-		this._latitud = _latitud;
-		this._longitud = _longitud;
-		this._servicios = _servicios;
-		this._horario = _horario;
-		this._titulo = _titulo;
-		this._descripcion = _descripcion;
-		this._gradoacc = _gradoacc;
-		this._id = _id;
-		this._tipo = _tipo;
-		this._relacionado = _relacionado;
-		this._clasificación = _clasificación;
-		this._precio = _precio;
-		this._email = _email;
-		this._url = _url;
-		this._accesibilidad = accesibilidad;
-		this._poblacion = _poblacion;
-		this._telefono = _telefono;
+		this.id = _id;
+		this.latitud = _latitud;
+		this.longitud = _longitud;
+		this.servicios = _servicios;
+		this.horario = _horario;
+		this.titulo = _titulo;
+		this.descripcion = _descripcion;
+		this.gradoacc = _gradoacc;
+		this.tipo = _tipo;
+		this.relacionado = _relacionado;
+		this.clasificación = _clasificación;
+		this.precio = _precio;
+		this.email = _email;
+		this.url = _url;
+		this.accesibilidad = _accesibilidad;
+		this.poblacion = _poblacion;
+		this.telefono = _telefono;
 	}
 
-	/**
-	 * @return the _latitud
-	 */
-	public double get_latitud() {
-		return _latitud;
+	public double getLatitud() {
+		return latitud;
 	}
 
-	/**
-	 * @param _latitud
-	 *            the _latitud to set
-	 */
-	public void set_latitud(double _latitud) {
-		this._latitud = _latitud;
+	public void setLatitud(double latitud) {
+		this.latitud = latitud;
 	}
 
-	/**
-	 * @return the _longitud
-	 */
-	public double get_longitud() {
-		return _longitud;
+	public double getLongitud() {
+		return longitud;
 	}
 
-	/**
-	 * @param _longitud
-	 *            the _longitud to set
-	 */
-	public void set_longitud(double _longitud) {
-		this._longitud = _longitud;
+	public void setLongitud(double longitud) {
+		this.longitud = longitud;
 	}
 
-	/**
-	 * @return the _servicios
-	 */
-	public String get_servicios() {
-		return _servicios;
+	public String getServicios() {
+		return servicios;
 	}
 
-	/**
-	 * @param _servicios
-	 *            the _servicios to set
-	 */
-	public void set_servicios(String _servicios) {
-		this._servicios = _servicios;
+	public void setServicios(String servicios) {
+		this.servicios = servicios;
 	}
 
-	/**
-	 * @return the _horario
-	 */
-	public String get_horario() {
-		return _horario;
+	public String getHorario() {
+		return horario;
 	}
 
-	/**
-	 * @param _horario
-	 *            the _horario to set
-	 */
-	public void set_horario(String _horario) {
-		this._horario = _horario;
+	public void setHorario(String horario) {
+		this.horario = horario;
 	}
 
-	/**
-	 * @return the _titulo
-	 */
-	public String get_titulo() {
-		return _titulo;
+	public String getTitulo() {
+		return titulo;
 	}
 
-	/**
-	 * @param _titulo
-	 *            the _titulo to set
-	 */
-	public void set_titulo(String _titulo) {
-		this._titulo = _titulo;
+	public void setTitulo(String titulo) {
+		this.titulo = titulo;
 	}
 
-	/**
-	 * @return the _descripcion
-	 */
-	public String get_descripcion() {
-		return _descripcion;
+	public String getDescripcion() {
+		return descripcion;
 	}
 
-	/**
-	 * @param _descripcion
-	 *            the _descripcion to set
-	 */
-	public void set_descripcion(String _descripcion) {
-		this._descripcion = _descripcion;
+	public void setDescripcion(String descripcion) {
+		this.descripcion = descripcion;
 	}
 
-	/**
-	 * @return the _gradoacc
-	 */
-	public String get_gradoacc() {
-		return _gradoacc;
+	public String getGradoacc() {
+		return gradoacc;
 	}
 
-	/**
-	 * @param _gradoacc
-	 *            the _gradoacc to set
-	 */
-	public void set_gradoacc(String _gradoacc) {
-		this._gradoacc = _gradoacc;
+	public void setGradoacc(String gradoacc) {
+		this.gradoacc = gradoacc;
 	}
 
-	/**
-	 * @return the _id
-	 */
-	public int get_id() {
-		return _id;
+	public int getId() {
+		return id;
 	}
 
-	/**
-	 * @param _id
-	 *            the _id to set
-	 */
-	public void set_id(int _id) {
-		this._id = _id;
+	public void setId(int id) {
+		this.id = id;
 	}
 
-	/**
-	 * @return the _tipo
-	 */
-	public String get_tipo() {
-		return _tipo;
+	public String getTipo() {
+		return tipo;
 	}
 
-	/**
-	 * @param _tipo
-	 *            the _tipo to set
-	 */
-	public void set_tipo(String _tipo) {
-		this._tipo = _tipo;
+	public void setTipo(String tipo) {
+		this.tipo = tipo;
 	}
 
-	/**
-	 * @return the _relacionado
-	 */
-	public String get_relacionado() {
-		return _relacionado;
+	public String getRelacionado() {
+		return relacionado;
 	}
 
-	/**
-	 * @param _relacionado
-	 *            the _relacionado to set
-	 */
-	public void set_relacionado(String _relacionado) {
-		this._relacionado = _relacionado;
+	public void setRelacionado(String relacionado) {
+		this.relacionado = relacionado;
 	}
 
-	/**
-	 * @return the _clasificación
-	 */
-	public String get_clasificación() {
-		return _clasificación;
+	public String getClasificación() {
+		return clasificación;
 	}
 
-	/**
-	 * @param _clasificación
-	 *            the _clasificación to set
-	 */
-	public void set_clasificación(String _clasificación) {
-		this._clasificación = _clasificación;
+	public void setClasificación(String clasificación) {
+		this.clasificación = clasificación;
 	}
 
-	/**
-	 * @return the _precio
-	 */
-	public String get_precio() {
-		return _precio;
+	public String getPrecio() {
+		return precio;
 	}
 
-	/**
-	 * @param _precio
-	 *            the _precio to set
-	 */
-	public void set_precio(String _precio) {
-		this._precio = _precio;
+	public void setPrecio(String precio) {
+		this.precio = precio;
 	}
 
-	/**
-	 * @return the _email
-	 */
-	public String get_email() {
-		return _email;
+	public String getEmail() {
+		return email;
 	}
 
-	/**
-	 * @param _email
-	 *            the _email to set
-	 */
-	public void set_email(String _email) {
-		this._email = _email;
+	public void setEmail(String email) {
+		this.email = email;
 	}
 
-	/**
-	 * @return the _url
-	 */
-	public String get_url() {
-		return _url;
+	public String getUrl() {
+		return url;
 	}
 
-	/**
-	 * @param _url
-	 *            the _url to set
-	 */
-	public void set_url(String _url) {
-		this._url = _url;
+	public void setUrl(String url) {
+		this.url = url;
 	}
 
-	/**
-	 * @return the accesibilidad
-	 */
 	public String getAccesibilidad() {
-		return _accesibilidad;
+		return accesibilidad;
 	}
 
-	/**
-	 * @param accesibilidad
-	 *            the accesibilidad to set
-	 */
 	public void setAccesibilidad(String accesibilidad) {
-		this._accesibilidad = accesibilidad;
+		this.accesibilidad = accesibilidad;
 	}
 
-	/**
-	 * @return the _poblacion
-	 */
-	public String get_poblacion() {
-		return _poblacion;
+	public String getPoblacion() {
+		return poblacion;
 	}
 
-	/**
-	 * @param _poblacion
-	 *            the _poblacion to set
-	 */
-	public void set_poblacion(String _poblacion) {
-		this._poblacion = _poblacion;
+	public void setPoblacion(String poblacion) {
+		this.poblacion = poblacion;
 	}
 
-	/**
-	 * @return the _telefono
-	 */
-	public String get_telefono() {
-		return _telefono;
+	public String getTelefono() {
+		return telefono;
 	}
 
-	/**
-	 * @param _telefono
-	 *            the _telefono to set
-	 */
-	public void set_telefono(String _telefono) {
-		this._telefono = _telefono;
+	public void setTelefono(String telefono) {
+		this.telefono = telefono;
 	}
 
+	public String toString() {
+		return ("RecursosVO = [" + "id = " + id + ", latitud = " + latitud
+				+ ", longitud = " + longitud + ", servicios = " + servicios
+				+ ", horario = " + horario + ", titulo = " + titulo
+				+ ", descripcion = " + descripcion + ", gradoacc = " + gradoacc
+				+ ", tipo = " + tipo + ", relacionado = " + relacionado
+				+ ", clasificación = " + clasificación + ", precio = " + precio
+				+ ", email = " + email + ", url = " + url
+				+ ", accesibilidad = " + accesibilidad + ", poblacion = "
+				+ poblacion + ", telefono = " + telefono + "]");
+	}
 }
