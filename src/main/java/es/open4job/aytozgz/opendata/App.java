@@ -1,10 +1,12 @@
 package es.open4job.aytozgz.opendata;
 
 import java.sql.SQLException;
+import java.util.Iterator;
+import java.util.List;
 
 import es.open4job.aytozgz.opendata.dao.AparcamientosDAO;
 import es.open4job.aytozgz.opendata.dao.RecursosDAO;
-
+import es.open4job.aytozgz.opendata.vo.RecursosVO;
 
 public class App 
 {
@@ -19,35 +21,24 @@ public class App
     	String password = "open4job";
     	String url = "jdbc:oracle:thin:" + user + "/" + password + "@" + host
     	+ ":" + puerto + ":" + sid;
-    	AparcamientosDAO aparcamientosDAO = new AparcamientosDAO(driver,
-    	url, user, password);
-    	RecursosDAO recursosDAO = new RecursosDAO(driver, url, user, password);
+    	
+    	
     	
     	//llamada a recursosDao
-    	try {
-    		System.out.println("recursos");
-    		recursosDAO.prueba();
-    		recursosDAO.getListadoRecursos();
-    		recursosDAO.getDatosRecurso(0);	//id
-    	} catch (ClassNotFoundException e) {
-    		e.printStackTrace();
-    	} catch (SQLException e) {
     	
-    		e.printStackTrace();
-    	} 
+    	RecursosDAO recursosDAO = new RecursosDAO(driver, url, user, password);
     	
-    	//llamada a aparcamientosDAO
-    	try {
-    		System.out.println("aparcamientos");
-    		aparcamientosDAO.prueba();
-    		aparcamientosDAO.getListadoAparcamientos();
-    		aparcamientosDAO.getDatosaparcamiento(1);	//id?
-    	} catch (ClassNotFoundException e) {
-    		e.printStackTrace();
-    	} catch (SQLException e) {
+    	List<RecursosVO> recursos = recursosDAO.getListadoRecursos();
     	
-    		e.printStackTrace();
+    	if (recursos != null){
+    		
+    		Iterator<RecursosVO> iterator = recursos.iterator();
+    		while (iterator.hasNext()) {
+    			RecursosVO recurso = iterator.next();
+    			System.out.println(recurso.toString());
+    		}
     	}
+    	 
     	
     }
 }

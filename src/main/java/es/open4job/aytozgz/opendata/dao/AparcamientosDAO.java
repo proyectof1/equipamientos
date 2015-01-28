@@ -7,7 +7,7 @@ import java.util.List;
 import es.open4job.aytozgz.opendata.vo.AparcamientosAccesosVO;
 import es.open4job.aytozgz.opendata.vo.RecursosVO;
 
-public class AparcamientosDAO extends AbstractDAO {
+public class AparcamientosDAO extends GenericDAO {
 
 	public AparcamientosDAO(String driver, String url, String user,
 			String password) {

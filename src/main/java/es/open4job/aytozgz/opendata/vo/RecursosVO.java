@@ -23,6 +23,13 @@ public class RecursosVO {
 	public RecursosVO() {
 	}
 
+	public RecursosVO(int _id, String _titulo, double _latitud, double _longitud){
+		this._id = _id;
+		this._titulo = _titulo;
+		this._latitud = _latitud;
+		this._longitud = _longitud;
+	}
+	
 	public RecursosVO(double _latitud, double _longitud,
 			String _servicios, String _horario, String _titulo,
 			String _descripcion, String _gradoacc, int _id, String _tipo,

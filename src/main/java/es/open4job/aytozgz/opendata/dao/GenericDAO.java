@@ -2,18 +2,21 @@ package es.open4job.aytozgz.opendata.dao;
 
 import java.sql.Connection;
 import java.sql.*;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
+public class GenericDAO {
 
-public class AbstractDAO {
+	public static final Logger logger = Logger.getLogger(GenericDAO.class
+			.getName());
 
 	private String driver;
 	private String url;
 	private String user;
 	private String password;
 	protected Connection connection = null;
- 
-	
-	public AbstractDAO(String driver, String url, String user, String password) {
+
+	public GenericDAO(String driver, String url, String user, String password) {
 		this.driver = driver;
 		this.url = url;
 		this.user = user;
@@ -53,20 +56,19 @@ public class AbstractDAO {
 	}
 
 	
-	
 	public void abrirConexion() throws SQLException, ClassNotFoundException {
 		try {
 			Class.forName(driver);
 			connection = DriverManager.getConnection(url, user, password);
 		} catch (ClassNotFoundException e) {
-			e.printStackTrace();
+			logger.log(Level.SEVERE, "Exception : " + e.getMessage());
 			throw e;
 		} catch (SQLException e) {
-			e.printStackTrace();
+			logger.log(Level.SEVERE, "Exception : " + e.getMessage());
 			throw e;
 		}
 	}
-	
+
 	public void cerrarConexion() {
 		if (connection != null) {
 			try {
@@ -76,27 +78,4 @@ public class AbstractDAO {
 		}
 	}
 
-	//adaptar y cambiar pa dentro del aparcamientos y recursos DAO
-	public void prueba() throws SQLException, ClassNotFoundException {
-		this.abrirConexion();
-		Statement st = null;
-		String query = "SELECT * FROM RECURSO";
-		try {
-			st = connection.createStatement();
-			ResultSet rs = st.executeQuery(query);
-			while (rs.next()) {
-				int id = rs.getInt(1);
-				System.out.println("id = " + id);
-			}
-		} catch (SQLException e) {
-			e.printStackTrace();
-		} finally {
-			if (st != null) {
-				st.close();
-			}
-		}
-		this.cerrarConexion();
-	}
-
-	
 }
